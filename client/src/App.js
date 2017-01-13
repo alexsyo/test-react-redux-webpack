@@ -1,5 +1,4 @@
 import React from 'react';
-import Test from './Components/Test.js';
 
 class App extends React.Component {
 
@@ -9,23 +8,37 @@ class App extends React.Component {
         this.showTest = this.showTest.bind(this);
         this.state = {};
         this.state.var1 = false;
+        this.state.test = null;
 
     }
 
     showTest() {
-        this.setState({var1: !this.state.var1});
+
+        this.state.var1 = !this.state.var1;
+
+        if (!!this.state.var1) {
+
+            require.ensure([], () => {
+
+                let Test = require('./Components/Test.js').default;
+                this.setState({test: <Test />});
+
+            }, 'Test');
+
+        } else {
+
+            this.setState({test: null});
+
+        }
+
     }
 
     render() {
 
-        let test = (!!this.state.var1)
-            ? <Test />
-            : null;
-
         return(
             <div>
                 <button onClick={this.showTest}>click to show</button>
-                {test}
+                {this.state.test}
             </div>
         );
 
