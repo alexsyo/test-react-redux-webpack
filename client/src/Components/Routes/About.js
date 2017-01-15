@@ -1,7 +1,6 @@
 import React from 'react';
-import NavBar from './Components/NavBar.js';
 
-class App extends React.Component {
+class About extends React.Component {
 
     constructor(props) {
 
@@ -13,8 +12,7 @@ class App extends React.Component {
 
         return(
             <div>
-                <NavBar />
-                {this.props.children}
+                <p>It's me, Alex!</p>
             </div>
         );
 
@@ -22,4 +20,4 @@ class App extends React.Component {
 
 }
 
-export default App;
+export default About;
