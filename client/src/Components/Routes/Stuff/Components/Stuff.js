@@ -20,7 +20,7 @@ class Stuff extends React.Component {
 
             require.ensure([], () => {
 
-                let Test = require('../Test.js').default;
+                let Test = require('./Test.js').default;
                 this.setState({test: <Test />});
 
             }, 'Test');
