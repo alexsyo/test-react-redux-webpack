@@ -2,8 +2,14 @@
 
 in progress...
 
+## Prepare
+
+run `npm install` to download the dependencies
+
 ## Build
 
-To build a test version for the browser run `npm run build-local` and go to localhost:8080
+To build the projet run `npm run build`
 
-To test a "poduction" build run `npm run build`
+## Test
+
+To launch a test version for the browser run `npm run start` and go to localhost:8080

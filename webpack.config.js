@@ -20,6 +20,13 @@ module.exports = {
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract('css!sass')
+      },
+      {
+        test: /\.html/,
+        loader: "file-loader",
+        query: {
+          name: "[name].[ext]"
+        }
       }
     ]
   },
