@@ -1,4 +1,4 @@
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+let ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',
@@ -12,14 +12,11 @@ module.exports = {
       {
         test: /\.js/,
         exclude: /(node_modules|bower_components)/,
-        loader: "babel",
-        query: {
-          presets: ['es2015', 'react']
-        }
+        loader: "babel"  // without .babelrc --> ?presets[]=es2015,presets[]=react"
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('css!sass')
+        loader: ExtractTextPlugin.extract('css!autoprefixer?browsers=last 4 version!sass')
       },
       {
         test: /\.html/,

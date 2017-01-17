@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/alexsyo/test-webpack-react#readme",
   "devDependencies": {
+    "autoprefixer-loader": "^3.2.0",
     "babel-core": "^6.21.0",
     "babel-jest": "^18.0.0",
     "babel-loader": "^6.2.10",
