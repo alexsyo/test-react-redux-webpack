@@ -1,10 +1,10 @@
-# test-webpack-react
+# test-react-webpack
 
-in progress...
+Sample app to test webpack configuration and lazy loading components
 
 ## Prepare
 
-run `npm install` to download the dependencies
+Run `npm install` to download the dependencies
 
 ## Build
 
