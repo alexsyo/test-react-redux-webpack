@@ -20,10 +20,7 @@ module.exports = {
       },
       {
         test: /\.html/,
-        loader: "file-loader",
-        query: {
-          name: "[name].[ext]"
-        }
+        loader: "file-loader?name=[name].[ext]"
       }
     ]
   },
