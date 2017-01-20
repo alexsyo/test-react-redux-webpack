@@ -1,7 +1,8 @@
+let debug = process.env.NODE_ENV != "production";
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  devtool: 'source-map',
+  devtool: debug ? 'source-map' : null,
   entry: './client/src/Start.js',
   output: {
     filename: 'bundle.js',
@@ -12,7 +13,7 @@ module.exports = {
       {
         test: /\.js/,
         exclude: /(node_modules|bower_components)/,
-        loader: "babel"  // without .babelrc --> ?presets[]=es2015,presets[]=react"
+        loader: "babel"  // without .babelrc --> ?presets[]=es2015,presets[]=react,preset[]=stage-3"
       },
       {
         test: /\.scss$/,
@@ -25,8 +26,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('style.css', {
-      allChunks: true
-    })
+    new ExtractTextPlugin('style.css', { allChunks: true })
   ]
 };
