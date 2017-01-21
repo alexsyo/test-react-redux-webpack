@@ -1,5 +1,8 @@
 import React from 'react';
-import Store from './../../../../Redux/Store.js';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as resourcesActions from 'redux/actions/resourcesActions';
+import * as populationActions from 'redux/actions/populationActions';
 
 class Stuff extends React.Component {
 
@@ -34,21 +37,15 @@ class Stuff extends React.Component {
 
     }
 
-    gather(resource) {
-
-        Store.dispatch({ type: 'STORE', resource });
-        Store.dispatch({ type: 'INCREASE' });
-
-    }
 
     render() {
 
         return(
             <div>
                 <p>Godd stuff...</p>
-                <button onClick={this.gather.bind(null, 'food')}>Gather Food</button>
-                <button onClick={this.gather.bind(null, 'wood')}>Gather Wood</button>
-                <button onClick={this.gather.bind(null, 'stone')}>Gather Stone</button>
+                <button onClick={this.props.store.bind(this, 'food')}>Gather Food</button>
+                <button onClick={this.props.store.bind(this, 'wood')}>Gather Wood</button>
+                <button onClick={this.props.store.bind(this, 'stone')}>Gather Stone</button>
                 <button onClick={this.showTest}>Say Hi!</button>
                 {this.state.test}
             </div>
@@ -58,4 +55,12 @@ class Stuff extends React.Component {
 
 }
 
-export default Stuff;
+const mapDispatchToProps = (dispatch) => {
+
+    return bindActionCreators({ 
+        store: resourcesActions.store
+    }, dispatch);
+
+};
+
+export default connect(null, mapDispatchToProps)(Stuff);

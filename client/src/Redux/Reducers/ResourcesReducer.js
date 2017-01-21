@@ -4,7 +4,7 @@ const initialState = {
     stone: 0
 };
 
-const reducer = (state = initialState, action) => {
+const resourcesReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'STORE':
             state = {...state, [action.resource]: state[action.resource] + 1}
@@ -19,4 +19,4 @@ const reducer = (state = initialState, action) => {
     return state;
 }
 
-export default reducer;
+export default resourcesReducer;

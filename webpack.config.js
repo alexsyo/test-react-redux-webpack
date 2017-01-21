@@ -1,9 +1,10 @@
-let debug = process.env.NODE_ENV != "production";
-let ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
+const debug = process.env.NODE_ENV != "production";
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   devtool: debug ? 'source-map' : null,
-  entry: './client/src/Start.js',
+  entry: './client/src/start.js',
   output: {
     filename: 'bundle.js',
     path: './client/dist/'
@@ -24,6 +25,9 @@ module.exports = {
         loader: "file-loader?name=[name].[ext]"
       }
     ]
+  },
+  resolve: {
+    root: path.resolve('./client/src')
   },
   plugins: [
     new ExtractTextPlugin('style.css', { allChunks: true })

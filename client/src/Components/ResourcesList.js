@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 class ResourcesList extends React.Component {
 
@@ -13,13 +14,13 @@ class ResourcesList extends React.Component {
         return(
             <ul>
                 <li>
-                    <p>Food: 0</p>
+                    <p>Food: {this.props.resources.food}</p>
                 </li>
                 <li>
-                    <p>Wood: 0</p>
+                    <p>Wood: {this.props.resources.wood}</p>
                 </li>
                 <li>
-                    <p>Stone: 0</p>
+                    <p>Stone: {this.props.resources.stone}</p>
                 </li>
             </ul>
         );
@@ -28,4 +29,10 @@ class ResourcesList extends React.Component {
 
 }
 
-export default ResourcesList;
+const mapStateToProps = (state) => {
+
+    return { resources: state.resources};
+
+} 
+
+export default connect(mapStateToProps, null)(ResourcesList);

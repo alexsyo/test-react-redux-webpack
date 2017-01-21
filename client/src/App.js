@@ -1,6 +1,6 @@
 import React from 'react';
-import NavBar from './Components/NavBar.js';
-import ResourcesList from './Components/ResourcesList.js';
+import NavBar from './components/NavBar.js';
+import ResourcesList from './components/ResourcesList.js';
 
 class App extends React.Component {
 

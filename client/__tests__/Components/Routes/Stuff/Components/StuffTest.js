@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
-import Stuff from '../../../../../src/Components/Routes/Stuff/Components/Stuff.js';
+import Stuff from '../../../../../src/components/Routes/Stuff/components/Stuff.js';
 
 it('display the correct elements', () => {
 

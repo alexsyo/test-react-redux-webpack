@@ -1,4 +1,4 @@
-# test-react-webpack
+# test-react-redux-webpack
 
 Sample app to test webpack configuration and lazy loading components
 

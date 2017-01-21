@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
-import About from '../../../../../src/Components/Routes/About/Components/About.js';
+import About from '../../../../../src/components/Routes/About/components/About.js';
 
 it('display the correct message', () => {
 

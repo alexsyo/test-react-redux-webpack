@@ -3,23 +3,25 @@ const initialState = {
     health: 5
 };
 
-const reducer = (state = initialState, action) => {
+const populationReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'INCREASE':
             state = { ...state, people: state.people + 1 };
-            return state;
+            break;
         case 'DECREASE':
             state = { ...state, people: state.people - 1 };
-            return state;
+            break;
         case 'HEAL':
             state = { ...state, heal: state.heal + 1 };
-            return state;
+            break;
         case 'SICKEN':
             state = { ...state, heal: state.heal - 1 };
             return state;
         default:
-            return state;
+            break;
     }
+
+    return state;
 }
 
-export default reducer;
+export default populationReducer;

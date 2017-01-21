@@ -1,6 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, hashHistory, IndexRoute } from 'react-router';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 import style from './sass/main.scss';
 import html from './index.html';
 
@@ -11,19 +13,22 @@ const rootRoute = {
         {
             path: '/',
             component: require('./App.js').default,
-            indexRoute: require('./Components/Routes/Home/index.js'),
+            indexRoute: require('./components/Routes/Home/index.js'),
             childRoutes: [
-                require('./Components/Routes/Stuff/index.js'),
-                require('./Components/Routes/Friends/index.js'),
-                require('./Components/Routes/About/index.js'),
-                require('./Components/Routes/Error/index.js'),
+                require('./components/Routes/Stuff/index.js'),
+                require('./components/Routes/Friends/index.js'),
+                require('./components/Routes/About/index.js'),
+                require('./components/Routes/Error/index.js'),
             ]
         }
     ]
 };
 
 render(
-  <Router history={hashHistory} routes={rootRoute} />, document.getElementById('app')
+    <Provider store={store}>
+        <Router history={hashHistory} routes={rootRoute} />
+    </Provider>,
+   document.getElementById('app')
 );
 
 

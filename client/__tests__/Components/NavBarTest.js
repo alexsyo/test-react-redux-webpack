@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
-import NavBar from '../../src/Components/NavBar.js';
+import NavBar from '../../src/components/NavBar.js';
 
 it('display the correct elements', () => {
 
