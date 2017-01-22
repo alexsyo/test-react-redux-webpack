@@ -1,12 +1,11 @@
 import { createStore } from 'redux';
 import reducers from './reducers';
 import middlewares from './middlewares'
-import axios from 'axios';
+import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 
-import * as errorActions from './actions/errorActions';
 
 // Create a Redux store holding the state of your app.
 // Its API is { subscribe, dispatch, getState }.
-const store = createStore(reducers, {}, middlewares);
+const store = createStore(reducers, {}, composeWithDevTools(middlewares));
 
 export default store;
