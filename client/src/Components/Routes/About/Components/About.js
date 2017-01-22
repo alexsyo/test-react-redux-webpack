@@ -12,7 +12,7 @@ class About extends React.Component {
 
         return(
             <div>
-                <p>It's me, Alex!</p>
+                <p key="about">It's me, Alex!</p>
             </div>
         );
 
